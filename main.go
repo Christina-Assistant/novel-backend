@@ -1,6 +1,7 @@
 package main
 
 import (
+	"novel-backend/middleware"
 	"novel-backend/router"
 )
 
@@ -8,5 +9,6 @@ import (
 // the <icon src="AllIcons.Actions.Execute"/> icon in the gutter and select the <b>Run</b> menu item from here.</p>
 func main() {
 	r := router.SetupRouter()
+	middleware.ConnectDatabase()
 	r.Run(":8080")
 }
